@@ -6,11 +6,10 @@ export class ErrorValidacionVenta extends Error {
 }
 
 export class ErrorVentaNoEncontrada extends Error {
-  constructor() {
-    super("Venta no encontrada");
+  constructor(mensaje = "Venta no encontrada") {
+    super(mensaje);
     this.name = "ErrorVentaNoEncontrada";
   }
-  
 }
 
 export class ErrorConflictoVenta extends Error {

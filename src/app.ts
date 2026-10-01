@@ -11,6 +11,9 @@ import { crearRutasProductos } from "./interface/productos/productos-merch.route
 
 import { ListarVentas } from "./application/ventas/listar-ventas.js";
 import { ObtenerVenta } from "./application/ventas/obtener-venta.js";
+import { CrearVenta } from "./application/ventas/crear-venta.js";
+import { ActualizarVenta } from "./application/ventas/actualizar-venta.js";
+import { EliminarVenta } from "./application/ventas/eliminar-venta.js";
 import { VentaMerchPrismaRepositorio } from "./infrastructure/ventas/venta-merch.prisma-repository.js";
 import { crearRutasVentas } from "./interface/ventas/ventas-merch.routes.js";
 
@@ -38,6 +41,9 @@ app.use(
   crearRutasVentas({
     listarVentas: new ListarVentas(repositorioVentas),
     obtenerVenta: new ObtenerVenta(repositorioVentas),
+    crearVenta: new CrearVenta(repositorioVentas),
+    actualizarVenta: new ActualizarVenta(repositorioVentas),
+    eliminarVenta: new EliminarVenta(repositorioVentas),
   }),
 );
 
